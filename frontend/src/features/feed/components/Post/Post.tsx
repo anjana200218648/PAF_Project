@@ -98,6 +98,7 @@ export function Post({ post, setPosts }: PostProps) {
     return () => subscription?.unsubscribe();
   }, [post.id, setPosts, webSocketClient]);
 
+//edit post
   useEffect(() => {
     const subscription = webSocketClient?.subscribe(`/topic/posts/${post.id}/edit`, (data) => {
       const post = JSON.parse(data.body);
