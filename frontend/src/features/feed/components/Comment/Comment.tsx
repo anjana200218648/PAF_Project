@@ -29,7 +29,7 @@ interface ICommentProps {
 export function Comment({ comment, deleteComment, editComment }: ICommentProps) {
   const navigate = useNavigate();
   const [showActions, setShowActions] = useState(false);
-  const [editing, setEditing] = useState(false);
+  const [editing, setEditing] = useState(false);// editing mode
   const [commentContent, setCommentContent] = useState(comment.content);
   const { user } = useAuthentication();
   return (
