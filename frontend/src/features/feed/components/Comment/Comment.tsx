@@ -22,7 +22,7 @@ export interface IComment {
 interface ICommentProps {
   comment: IComment;
   deleteComment: (commentId: number) => Promise<void>;
-  editComment: (commentId: number, content: string) => Promise<void>;
+  editComment: (commentId: number, content: string) => Promise<void>;//edit
 }
 
 // Comment component
