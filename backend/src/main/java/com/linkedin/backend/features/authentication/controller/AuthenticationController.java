@@ -128,7 +128,7 @@ public class AuthenticationController {
 
         return authenticationUserService.updateCoverPicture(user, coverPicture);
     }
-
+    //test 1
     @GetMapping("/users/me")
     public User getUser(@RequestAttribute("authenticatedUser") User user) {
         return user;
