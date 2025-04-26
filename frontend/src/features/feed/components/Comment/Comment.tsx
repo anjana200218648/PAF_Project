@@ -30,7 +30,8 @@ export function Comment({ comment, deleteComment, editComment }: ICommentProps) 
   const navigate = useNavigate();
   const [showActions, setShowActions] = useState(false);
   const [editing, setEditing] = useState(false);// editing mode
-  const [commentContent, setCommentContent] = useState(comment.content);
+  const [commentContent, setCommentContent] = useState(comment.content);// comment text
+
   const { user } = useAuthentication();
   return (
     <div key={comment.id} className={classes.root}>
