@@ -76,7 +76,7 @@ export function AuthenticationContextProvider() {
       },
     });
   };
-
+   //signupFix
   const signup = async (email: string, password: string) => {
     await request<IAuthenticationResponse>({
       endpoint: "/api/v1/authentication/register",
