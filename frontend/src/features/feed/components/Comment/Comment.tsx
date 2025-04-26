@@ -32,7 +32,7 @@ export function Comment({ comment, deleteComment, editComment }: ICommentProps) 
   const [editing, setEditing] = useState(false);// editing mode
   const [commentContent, setCommentContent] = useState(comment.content);// comment text
 
-  const { user } = useAuthentication();
+  const { user } = useAuthentication();// current logged-in user
   return (
     <div key={comment.id} className={classes.root}>
       {!editing ? (
