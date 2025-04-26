@@ -27,7 +27,7 @@ interface ICommentProps {
 
 // Comment component
 export function Comment({ comment, deleteComment, editComment }: ICommentProps) {
-  const navigate = useNavigate();
+  const navigate = useNavigate();//useNavigate
   const [showActions, setShowActions] = useState(false);
   const [editing, setEditing] = useState(false);// editing mode
   const [commentContent, setCommentContent] = useState(comment.content);// comment text
