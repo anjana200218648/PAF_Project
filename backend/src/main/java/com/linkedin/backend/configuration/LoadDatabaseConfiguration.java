@@ -196,6 +196,7 @@ public class LoadDatabaseConfiguration {
                 generateRandomExpertise() + ". Based in " + location + ".");
         return user;
     }
+    //TEST 4 
 
     private String generateRandomExpertise() {
         List<String> skills = Arrays.asList("cloud architecture", "distributed systems", "machine learning",
