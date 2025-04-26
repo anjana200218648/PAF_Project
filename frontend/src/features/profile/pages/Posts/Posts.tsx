@@ -57,7 +57,7 @@ export function Posts() {
         ))}
         {posts.length === 0 && (
           <div className={classes.empty}>
-            <p>No post to display.</p>
+            <p>No post to display...</p>
           </div>
         )}
       </div>
