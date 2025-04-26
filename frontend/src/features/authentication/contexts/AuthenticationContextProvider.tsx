@@ -32,7 +32,7 @@ interface IAuthenticationContextType {
   signup: (email: string, password: string) => Promise<void>;
   ouathLogin: (code: string, page: "login" | "signup") => Promise<void>;
 }
-
+//Authentication 
 const AuthenticationContext = createContext<IAuthenticationContextType | null>(null);
 
 export function useAuthentication() {
