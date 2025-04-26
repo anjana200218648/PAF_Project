@@ -10,7 +10,7 @@ import { TimeAgo } from "../TimeAgo/TimeAgo";
 import classes from "./Comment.module.scss";
 
 //test data
-
+// Comment data type
 export interface IComment {
   id: number;
   content: string;
