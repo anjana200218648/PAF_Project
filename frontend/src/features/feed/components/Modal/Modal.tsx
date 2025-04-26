@@ -25,7 +25,7 @@ export function Madal({
   const [file, setFile] = useState<File | undefined>();
 
   if (!showModal) return null;
-
+  //test 3 ##
   function handleImageChange(e: ChangeEvent<HTMLInputElement>) {
     setError("");
     const file = e.target.files?.[0];
