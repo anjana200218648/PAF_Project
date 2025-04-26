@@ -77,6 +77,7 @@ export function Feed() {
               alt=""
             />
           </button>
+          //create post
           <Button outline onClick={() => setShowPostingModal(true)}>
             Start a post
           </Button>
