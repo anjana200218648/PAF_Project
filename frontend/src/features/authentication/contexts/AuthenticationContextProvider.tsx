@@ -7,6 +7,7 @@ interface IAuthenticationResponse {
   token: string;
   messgage: string;
 }
+//export 
 export interface IUser {
   id: string;
   email: string;
@@ -20,6 +21,7 @@ export interface IUser {
   profilePicture?: string;
   coverPicture?: string;
   about?: string;
+
 }
 
 interface IAuthenticationContextType {
