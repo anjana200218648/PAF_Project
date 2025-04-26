@@ -195,7 +195,7 @@ public class LoadDatabaseConfiguration {
         user.setAbout("I'm a passionate " + position + " at " + company + " with expertise in " +
                 generateRandomExpertise() + ". Based in " + location + ".");
         return user;
-    }
+    } //Test
     //TEST 4 
 
     private String generateRandomExpertise() {
