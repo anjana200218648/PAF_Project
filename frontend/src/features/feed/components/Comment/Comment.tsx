@@ -25,6 +25,7 @@ interface ICommentProps {
   editComment: (commentId: number, content: string) => Promise<void>;
 }
 
+// Comment component
 export function Comment({ comment, deleteComment, editComment }: ICommentProps) {
   const navigate = useNavigate();
   const [showActions, setShowActions] = useState(false);
