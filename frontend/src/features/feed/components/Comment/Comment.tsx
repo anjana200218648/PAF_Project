@@ -80,6 +80,7 @@ export function Comment({ comment, deleteComment, editComment }: ICommentProps) 
         </>
       ) : (
         <form
+        // Edit comment form
           onSubmit={async (e) => {
             e.preventDefault();
             await editComment(comment.id, commentContent);
