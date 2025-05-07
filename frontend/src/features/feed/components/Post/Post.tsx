@@ -182,6 +182,7 @@ export function Post({ post, setPosts }: PostProps) {
     });
   };
 
+  //delete post
   const deletePost = async (id: number) => {
     await request<void>({
       endpoint: `/api/v1/feed/posts/${id}`,
