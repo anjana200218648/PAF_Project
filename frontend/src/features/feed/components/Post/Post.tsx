@@ -196,6 +196,7 @@ export function Post({ post, setPosts }: PostProps) {
     });
   };
 
+  //edit post
   const editPost = async (data: FormData) => {
     await request<IPost>({
       endpoint: `/api/v1/feed/posts/${post.id}`,
