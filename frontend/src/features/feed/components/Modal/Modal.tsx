@@ -2,6 +2,7 @@ import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useRef, useState } fr
 import { Button } from "../../../../components/Button/Button";
 import { Input } from "../../../../components/Input/Input";
 import classes from "./Modal.module.scss";
+
 interface IPostingMadalProps {
   showModal: boolean;
   content?: string;
