@@ -125,7 +125,7 @@ export function Post({ post, setPosts }: PostProps) {
     await request<IPost>({
       endpoint: `/api/v1/feed/posts/${post.id}/like`,
       method: "PUT",
-      onSuccess: () => {},
+      onSuccess: () => { },
       onFailure: (error) => {
         console.error(error);
       },
