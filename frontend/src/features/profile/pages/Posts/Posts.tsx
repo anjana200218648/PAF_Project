@@ -11,7 +11,6 @@ import { LeftSidebar } from "../../../feed/components/LeftSidebar/LeftSidebar";
 import { IPost, Post } from "../../../feed/components/Post/Post";
 import { RightSidebar } from "../../../feed/components/RightSidebar/RightSidebar";
 import classes from "./Posts.module.scss";
-
 export function Posts() {
   const { id } = useParams();
   const [posts, setPosts] = useState<IPost[]>([]);
@@ -58,7 +57,7 @@ export function Posts() {
         ))}
         {posts.length === 0 && (
           <div className={classes.empty}>
-            <p>No post to display...</p>
+            <p>No post to display.</p>
           </div>
         )}
       </div>
