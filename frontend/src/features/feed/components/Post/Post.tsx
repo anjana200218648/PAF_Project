@@ -12,7 +12,6 @@ import { Madal } from "../Modal/Modal";
 import { TimeAgo } from "../TimeAgo/TimeAgo";
 import classes from "./Post.module.scss";
 
-//export interface
 export interface IPost {
   id: number;
   content: string;
