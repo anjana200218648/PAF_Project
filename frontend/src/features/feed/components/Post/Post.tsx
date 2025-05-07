@@ -291,6 +291,7 @@ export function Post({ post, setPosts }: PostProps) {
             className={classes.picture}
           />
         )}
+        
         <div className={classes.stats}>
           {likes.length > 0 ? (
             <div className={classes.stat}>
