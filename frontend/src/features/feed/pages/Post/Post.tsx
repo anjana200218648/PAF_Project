@@ -11,7 +11,6 @@ export function PostPage() {
   const { id } = useParams();
   const { user } = useAuthentication();
 
-//post
   useEffect(() => {
     request<IPost>({
       endpoint: `/api/v1/feed/posts/${id}`,
