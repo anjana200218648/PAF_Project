@@ -14,7 +14,8 @@ export interface IComment {
   content: string; // Text content of the comment
   author: IUser; // The user who posted the comment
   creationDate: string;// The date when the comment was created
-  updatedDate?: string;
+  updatedDate?: string;// Optional, the date when the comment was last updated
+
 }
 
 interface ICommentProps {
