@@ -18,7 +18,7 @@ export interface IComment {
 
 }
 
-interface ICommentProps {
+interface ICommentProps {// Props interface for the Comment component
   comment: IComment;
   deleteComment: (commentId: number) => Promise<void>;
   editComment: (commentId: number, content: string) => Promise<void>;
