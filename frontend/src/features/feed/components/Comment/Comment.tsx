@@ -13,7 +13,7 @@ export interface IComment {
   id: number;// Unique identifier for the comment
   content: string; // Text content of the comment
   author: IUser; // The user who posted the comment
-  creationDate: string;
+  creationDate: string;// The date when the comment was created
   updatedDate?: string;
 }
 
