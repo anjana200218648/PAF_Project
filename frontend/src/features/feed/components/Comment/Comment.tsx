@@ -10,7 +10,7 @@ import { TimeAgo } from "../TimeAgo/TimeAgo";
 import classes from "./Comment.module.scss";
 
 export interface IComment {
-  id: number;
+  id: number;// Unique identifier for the comment
   content: string;//content
   author: IUser;//author
   creationDate: string;
