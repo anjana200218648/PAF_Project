@@ -9,7 +9,7 @@ import {
 import { TimeAgo } from "../TimeAgo/TimeAgo";
 import classes from "./Comment.module.scss";
 //test
-export interface IComment {
+export interface IComment {//export interface
   id: number;
   content: string;
   author: IUser;
