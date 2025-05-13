@@ -121,3 +121,11 @@ input:focus {
   margin-top: 0.5rem;                 // Space above buttons
 }
 // Button styles for Save and Cancel buttons inside the edit form
+.buttonWrapper button {
+  padding: 0.5rem 1rem;               // Padding inside buttons
+  border: none;                       // Remove default border
+  border-radius: 0.3rem;              // Rounded corners for the buttons
+  cursor: pointer;                    // Cursor pointer on hover
+  font-size: 0.9rem;                  // Slightly smaller font for buttons
+  transition: background-color 0.3s ease; // Smooth transition on hover
+}
