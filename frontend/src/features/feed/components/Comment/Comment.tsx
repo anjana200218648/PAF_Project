@@ -27,7 +27,7 @@ interface ICommentProps {// Props interface for the Comment component
 export function Comment({ comment, deleteComment, editComment }: ICommentProps) {
   const navigate = useNavigate();// React Router hook for navigation
   const [showActions, setShowActions] = useState(false);
-  const [editing, setEditing] = useState(false);
+  const [editing, setEditing] = useState(false);// State to control visibility of action buttons (Edit/Delete)
   const [commentContent, setCommentContent] = useState(comment.content);
   const { user } = useAuthentication();
   return (
