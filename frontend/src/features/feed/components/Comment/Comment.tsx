@@ -14,7 +14,7 @@ export interface IComment {//export interface
   content: string;
   author: IUser;
   creationDate: string;
-  updatedDate?: string;
+  updatedDate?: string; //updatedDate
 }
 
 interface ICommentProps { //ICommentProps
