@@ -23,7 +23,7 @@ interface ICommentProps {// Props interface for the Comment component
   deleteComment: (commentId: number) => Promise<void>;// Function to delete a comment
   editComment: (commentId: number, content: string) => Promise<void>;// Function to edit a comment
 }
-//test
+// Main Comment component function
 export function Comment({ comment, deleteComment, editComment }: ICommentProps) {
   const navigate = useNavigate();
   const [showActions, setShowActions] = useState(false);
