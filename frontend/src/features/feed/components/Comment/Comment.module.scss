@@ -90,3 +90,10 @@
     flex-shrink: 0;
   }
 }
+// Styling for the comment content section
+.content {
+  font-size: 1rem;                   // Set a readable font size for the comment content
+  line-height: 1.5;                  // Improve readability with line spacing
+  color: #333;                       // Dark text color for better contrast
+  word-wrap: break-word;             // Ensure long words wrap correctly
+}
