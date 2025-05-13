@@ -19,7 +19,7 @@ export interface IComment {
 }
 
 interface ICommentProps {// Props interface for the Comment component
-  comment: IComment;
+  comment: IComment;// The comment data passed as props
   deleteComment: (commentId: number) => Promise<void>;
   editComment: (commentId: number, content: string) => Promise<void>;
 }
