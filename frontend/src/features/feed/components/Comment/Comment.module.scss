@@ -97,3 +97,12 @@
   color: #333;                       // Dark text color for better contrast
   word-wrap: break-word;             // Ensure long words wrap correctly
 }
+.formWrapper {
+  display: flex;                     // Use flexbox for form layout
+  flex-direction: column;            // Stack input fields vertically
+  gap: 0.5rem;                       // Space between input field and other elements
+  padding: 0.5rem;                   // Padding around the input form
+  background-color: #f9f9f9;         // Light background for the edit form
+  border-radius: 0.3rem;             // Rounded corners for the form
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Add subtle shadow for depth
+}
