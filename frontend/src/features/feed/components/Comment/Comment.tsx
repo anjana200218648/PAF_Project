@@ -11,7 +11,7 @@ import classes from "./Comment.module.scss";
 
 export interface IComment {
   id: number;
-  content: string;
+  content: string;//content
   author: IUser;
   creationDate: string;
   updatedDate?: string;
