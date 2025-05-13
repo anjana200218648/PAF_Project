@@ -25,7 +25,7 @@ interface ICommentProps {// Props interface for the Comment component
 }
 // Main Comment component function
 export function Comment({ comment, deleteComment, editComment }: ICommentProps) {
-  const navigate = useNavigate();
+  const navigate = useNavigate();// React Router hook for navigation
   const [showActions, setShowActions] = useState(false);
   const [editing, setEditing] = useState(false);
   const [commentContent, setCommentContent] = useState(comment.content);
