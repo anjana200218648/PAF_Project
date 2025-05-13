@@ -18,7 +18,7 @@ export interface IComment {//export interface
 }
 
 interface ICommentProps { //ICommentProps
-  comment: IComment;
+  comment: IComment;//comment
   deleteComment: (commentId: number) => Promise<void>;
   editComment: (commentId: number, content: string) => Promise<void>;
 }
