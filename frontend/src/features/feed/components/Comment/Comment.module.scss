@@ -114,3 +114,9 @@ input:focus {
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.2); // Add subtle green glow effect
 }
 // Button inside the edit form (Save/Cancel)
+.buttonWrapper {
+  display: flex;                     // Flex layout for buttons (Save/Cancel)
+  gap: 1rem;                         // Space between buttons
+  justify-content: flex-end;          // Align buttons to the right
+  margin-top: 0.5rem;                 // Space above buttons
+}
