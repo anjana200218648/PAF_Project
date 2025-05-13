@@ -29,7 +29,7 @@ export function Comment({ comment, deleteComment, editComment }: ICommentProps) 
   const [showActions, setShowActions] = useState(false);
   const [editing, setEditing] = useState(false);// State to control visibility of action buttons (Edit/Delete)
   const [commentContent, setCommentContent] = useState(comment.content);
-  const { user } = useAuthentication();
+  const { user } = useAuthentication();// Retrieve the current authenticated user
   return (
     <div key={comment.id} className={classes.root}>
       {!editing ? (
