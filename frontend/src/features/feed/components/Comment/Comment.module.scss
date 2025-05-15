@@ -179,3 +179,10 @@ input:focus {
   border-bottom: 1px solid #ccc;
   padding-bottom: 0.3rem;
 }
+.name {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
