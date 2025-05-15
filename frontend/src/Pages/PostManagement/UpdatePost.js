@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { X, Trash2, Upload, Image as ImageIcon, Video as VideoIcon, Save, Loader2, Type, FileText, RefreshCw } from 'lucide-react';
 import SideBar from '../../Components/SideBar/SideBar';
-import './PostManagement.css';
+import './UpdatePost.css';
 
 function UpdatePost() {
   const { id } = useParams();
@@ -154,157 +154,162 @@ function UpdatePost() {
 
   if (loading) {
     return (
-      <div className="posts-container">
+      <div className="update-post-container">
         <SideBar />
-        <main className="posts-loading">
-          <div className="posts-loading-spinner">
-            <Loader2 size={48} className="animate-spin" />
+        <div className="update-post-content">
+          <div className="loading-container">
+            <Loader2 size={48} className="loader-icon accent" />
             <p>Loading post details...</p>
           </div>
-        </main>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="posts-container">
+    <div className="update-post-container">
       <SideBar />
-      <main>
-        <div className="posts-form-container">
-          <div className="posts-form-header">
-            <RefreshCw size={24} />
-            <h1>Update Post</h1>
-          </div>
-          
-          <form onSubmit={handleSubmit} className="posts-form">
-            <div className="posts-form-group">
-              <label>
-                <Type size={18} />
-                Title
-              </label>
-              <input
-                className="posts-input"
-                type="text"
-                placeholder="Enter post title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                required
-              />
-            </div>
+      <div className="update-post-content">
+        <main className="update-post-main">
+          <div className="update-post-card">
+            <h1 className="update-post-title">
+              <RefreshCw size={24} />
+              Update Post
+            </h1>
             
-            <div className="posts-form-group">
-              <label>
-                <FileText size={18} />
-                Description
-              </label>
-              <textarea
-                className="posts-textarea"
-                placeholder="Write your post description..."
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                required
-                rows={4}
-              />
-            </div>
-            
-            <div className="posts-form-group">
-              <label>
-                <ImageIcon size={18} />
-                Existing Media
-              </label>
-              <div className="posts-media-previews">
-                {existingMedia.map((mediaUrl, index) => (
-                  <div key={`existing-${index}`} className="posts-media-preview-item">
-                    {mediaUrl.endsWith('.mp4') ? (
-                      <video className="posts-media-preview-video" controls>
-                        <source src={`http://localhost:8080${mediaUrl}`} type="video/mp4" />
-                      </video>
-                    ) : (
-                      <img className="posts-media-preview-image" src={`http://localhost:8080${mediaUrl}`} alt={`Media ${index}`} />
-                    )}
-                    <button 
-                      type="button" 
-                      className="posts-media-preview-remove"
-                      onClick={() => handleDeleteMedia(mediaUrl)}
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-              
-            <div className="posts-form-group">
-              <label>
-                <Upload size={18} />
-                Add New Media
-              </label>
-              <div className="posts-media-previews">
-                {newMediaPreviews.map((preview, index) => (
-                  <div key={`new-${index}`} className="posts-media-preview-item">
-                    {preview.type.startsWith('video/') ? (
-                      <video className="posts-media-preview-video" controls>
-                        <source src={preview.url} type={preview.type} />
-                      </video>
-                    ) : (
-                      <img className="posts-media-preview-image" src={preview.url} alt={`New Media ${index}`} />
-                    )}
-                    <button 
-                      type="button" 
-                      className="posts-media-preview-remove"
-                      onClick={() => removeNewMedia(index)}
-                    >
-                      <X size={14} />
-                    </button>
-                  </div>
-                ))}
+            <form onSubmit={handleSubmit} className="update-post-form">
+              <div className="form-group">
+                <label className="form-label">
+                  <Type size={18} />
+                  Title
+                </label>
+                <input
+                  className="form-input"
+                  type="text"
+                  placeholder="Enter post title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                />
               </div>
               
-              <div className="posts-media-upload">
-                <label className="posts-upload-label">
-                  <Upload size={20} />
+              <div className="form-group">
+                <label className="form-label">
+                  <FileText size={18} />
+                  Description
+                </label>
+                <textarea
+                  className="form-textarea"
+                  placeholder="Write your post description..."
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  required
+                  rows={4}
+                />
+              </div>
+              
+              {existingMedia.length > 0 && (
+                <div className="form-group">
+                  <label className="form-label">
+                    <ImageIcon size={18} />
+                    Existing Media
+                  </label>
+                  <div className="media-preview-container">
+                    {existingMedia.map((mediaUrl, index) => (
+                      <div key={`existing-${index}`} className="media-preview-item">
+                        {mediaUrl.endsWith('.mp4') ? (
+                          <video className="media-preview" controls>
+                            <source src={`http://localhost:8080${mediaUrl}`} type="video/mp4" />
+                          </video>
+                        ) : (
+                          <img className="media-preview" src={`http://localhost:8080${mediaUrl}`} alt={`Media ${index}`} />
+                        )}
+                        <button 
+                          type="button" 
+                          className="remove-media-btn"
+                          onClick={() => handleDeleteMedia(mediaUrl)}
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+                
+              <div className="form-group">
+                <label className="form-label">
+                  <Upload size={18} />
+                  Add New Media
+                </label>
+                {newMediaPreviews.length > 0 && (
+                  <div className="media-preview-container">
+                    {newMediaPreviews.map((preview, index) => (
+                      <div key={`new-${index}`} className="media-preview-item">
+                        {preview.type.startsWith('video/') ? (
+                          <video className="media-preview" controls>
+                            <source src={preview.url} type={preview.type} />
+                          </video>
+                        ) : (
+                          <img className="media-preview" src={preview.url} alt={`New Media ${index}`} />
+                        )}
+                        <button 
+                          type="button" 
+                          className="remove-media-btn"
+                          onClick={() => removeNewMedia(index)}
+                        >
+                          <X size={14} />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                <label className="file-upload-label">
+                  <Upload size={20} className="upload-icon" />
                   <span>Choose files (max 3 images or 1 video)</span>
                   <input
                     type="file"
                     accept="image/jpeg,image/png,image/jpg,video/mp4"
                     multiple
                     onChange={handleNewMediaChange}
-                    className="posts-upload-input"
+                    className="file-upload-input"
                   />
                 </label>
-                <p className="posts-upload-hint">Supports: JPEG, PNG, JPG, MP4 (max 50MB)</p>
+                <p className="file-hint">Supports: JPEG, PNG, JPG, MP4 (max 50MB)</p>
               </div>
-            </div>
-            
-            <div className="posts-form-actions">
-              <button 
-                type="button" 
-                className="posts-btn posts-btn-secondary"
-                onClick={() => navigate('/allPost')}
-              >
-                Cancel
-              </button>
-              <button 
-                type="submit" 
-                className="posts-btn posts-btn-primary"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 size={18} className="animate-spin" />
-                    <span>Updating...</span>
-                  </>
-                ) : (
-                  <>
-                    <Save size={18} />
-                    <span>Update Post</span>
-                  </>
-                )}
-              </button>
-            </div>
-          </form>
-        </div>
-      </main>
+              
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
+                <button 
+                  type="button" 
+                  className="submit-btn"
+                  onClick={() => navigate('/allPost')}
+                  style={{ backgroundColor: '#94a3b8' }}
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="submit" 
+                  className="submit-btn accent"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={18} className="loader-icon" />
+                      <span>Updating...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Save size={18} />
+                      <span>Update Post</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
