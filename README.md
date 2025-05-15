@@ -1,106 +1,85 @@
-<img src = "./screenshot.png"/>
+# EduFlow - Learning Management System
 
-## Running the project on your machine
+## Overview
+EduFlow is a modern learning management system built with Spring Boot and React. It provides an interactive platform for creating, managing, and sharing educational content with features like media uploads, user interactions, and learning progress tracking.
+
+## Features
+- 📝 Post Management
+- 🎥 Multimedia Content Support
+- 👥 User Management
+- 📊 Learning Progress Tracking
+- 🔔 Real-time Notifications
+- 🎯 Interactive Learning System
+
+## Tech Stack
+- **Frontend**: React.js
+- **Backend**: Spring Boot
+- **Database**: MongoDB
+- **Dependencies**:
+  - Node.js (v16+)
+  - Java (v17+)
+  - Maven
+  - MongoDB
+
+## Getting Started
 
 ### Prerequisites
+```bash
+# Install MongoDB
+brew install mongodb-community
+brew services start mongodb-community
 
-Node.js (version 22 or compatible), npm (version 10 or compatible),
-Java JDK (version 21), and Docker (version 24.0.7 or compatible).
-
-#### Backend Setup
-
-Navigate to the backend directory:
-
+# Install Node.js (if not installed)
+brew install node
 ```
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/EduFlow.git
+cd EduFlow
+```
+
+2. **Backend Setup**
+```bash
 cd backend
+./mvnw spring-boot:run
 ```
+The backend will start on http://localhost:8080
 
-Run the docker containers:
-
-```
-docker-compose up
-```
-
-Set up continuous build:
-
-_Mac/Linux:_
-
-```
-./gradlew build -t -x test
-```
-
-_Windows:_
-
-```
-gradlew.bat build -t -x test
-```
-
-Configure environment variables for OAuth 2.0 and OIDC, aka the Continue with Google button. Give fake values if you do not want to test this feature:
-
-_Mac/Linux:_
-
-```
-export OAUTH_GOOGLE_CLIENT_ID=your_google_client_id
-export OAUTH_GOOGLE_CLIENT_SECRET=your_google_client_secret
-```
-
-_Windows:_
-
-```
-set OAUTH_GOOGLE_CLIENT_ID=your_google_client_id
-set OAUTH_GOOGLE_CLIENT_SECRET=your_google_client_secret
-```
-
-Run the backend:
-
-_Mac/Linux:_
-
-```
-./gradlew bootRun
-```
-
-_Windows:_
-
-```
-gradlew.bat bootRun
-```
-
-#### Frontend Setup
-
-Navigate to the frontend directory:
-
-```
+3. **Frontend Setup**
+```bash
 cd frontend
-```
-
-Set up the necessary environment variables:
-
-_Mac/Linux:_
-
-```
-cp .env.example .env
-```
-
-_Windows:_
-
-```
-copy .env.example .env
-```
-
-⚠️: make sure all variables are populated. Give fake value for `VITE_GOOGLE_OAUTH_CLIENT_ID` if you do not want to test Oauth 2.0 and OIDC.
-
-Install dependencies:
-
-```
 npm install
+npm start
 ```
+The frontend will start on http://localhost:3000
 
-Run the frontend in development mode:
+## API Endpoints
 
-```
-npm run dev
-```
+### Learning System
+- `GET /learningSystem` - Get all learning posts
+- `GET /learningSystem/{id}` - Get specific learning post
+- `DELETE /learningSystem/{id}` - Delete learning post
 
-You can access the backend at `http://localhost:8080`, the frontend at `http://localhost:5173`, and the Mailhog SMTP server UI at `http://localhost:8025`.
+### Post Management
+- `GET /posts` - Get all posts
+- `POST /posts` - Create new post
+- `PUT /posts/{postId}` - Update post
+- `DELETE /posts/{postId}` - Delete post
 
-The database hostname is `127.0.0.1`, the port is `3306`, and the root password is `root`.
+### User Management
+- `GET /user/{userID}` - Get user profile
+- `PUT /user/{userID}/follow` - Follow user
+- `PUT /user/{userID}/unfollow` - Unfollow user
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
