@@ -145,3 +145,12 @@ input:focus {
 .buttonWrapper .save:hover {
   background-color: #388e3c;           // Darker green on hover new
 }
+.action {
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.3s;
+}
