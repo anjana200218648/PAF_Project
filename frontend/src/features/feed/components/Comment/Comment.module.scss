@@ -169,3 +169,11 @@ input:focus {
   gap: 1rem;
   align-items: flex-start;
 }
+.author {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 4rem 1fr;
+  gap: 1rem;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
