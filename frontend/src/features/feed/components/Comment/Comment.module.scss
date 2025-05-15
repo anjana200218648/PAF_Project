@@ -148,3 +148,18 @@ input:focus {
 .buttonWrapper{
   background-color: #388e3c;           // Darker green on hover new
 }
+
+.root {
+  display: grid;
+  font-size: 0.8rem;
+  gap: 0.3rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+// .root:last-child {
+//   margin-bottom: 0;
+//   padding-bottom: 0;
+//   border-bottom: none;
+// }
