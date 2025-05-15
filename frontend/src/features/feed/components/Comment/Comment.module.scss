@@ -179,4 +179,12 @@ input:focus {
 }
 .author > div {
   width: 100%;
+}.action {
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.3s;
 }
