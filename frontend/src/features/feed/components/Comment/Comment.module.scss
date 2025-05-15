@@ -175,3 +175,7 @@ input:focus {
   width: 100%;
   text-align: left;
 }
+.actions button:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem;
+}
