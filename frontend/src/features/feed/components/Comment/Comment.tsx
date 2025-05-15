@@ -99,3 +99,14 @@ return (
                     className="text-sm text-red-600"
                     onClick={() => handleDelete(comment.id)}
                   ></button>
+                  Delete
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
