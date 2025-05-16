@@ -118,6 +118,7 @@ function AddLeariningPost() {
                 <Globe size={18} />
                 Content URL
               </label>
+              //check my url validation
               <input
                 type="url"
                 className={`learning-input ${errors.contentURL ? 'error' : ''}`}
