@@ -59,7 +59,7 @@ function AllLearningPost() {
     const fetchPosts = async () => {
     setIsLoading(true);
       try {
-        const response = await axios.get('http://localhost:8080/learningSystem');
+        const response = await axios.get('http://localhost:8080/learningSystem'); //chek backend url 
         setPosts(response.data);
       setFilteredPosts(response.data);
       } catch (error) {
