@@ -68,7 +68,7 @@ public class PostManagementController {
         // Resolve the upload directory as an absolute path
         final File uploadDirectory = new File(uploadDir.isBlank() ? uploadDir : System.getProperty("user.dir"), uploadDir);
 
-        // Ensure the upload directory exists
+        // Check upload directory exists
         if (!uploadDirectory.exists()) {
             boolean created = uploadDirectory.mkdirs();
             if (!created) {
@@ -162,7 +162,7 @@ public class PostManagementController {
         post.setDescription(description);
 
         if (newMediaFiles != null && !newMediaFiles.isEmpty()) {
-            // Ensure the upload directory exists
+            // Check upload directory exists
             final File uploadDirectory = new File(uploadDir.isBlank() ? uploadDir : System.getProperty("user.dir"), uploadDir);
             if (!uploadDirectory.exists()) {
                 boolean created = uploadDirectory.mkdirs();
