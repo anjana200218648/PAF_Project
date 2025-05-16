@@ -42,7 +42,7 @@ public class LearningSystemController {
                 .orElseThrow(() -> new UserNotFoundException("User not found for ID: " + newLearningSystemModel.getPostOwnerID()));
         newLearningSystemModel.setPostOwnerName(postOwnerName);
 
-        // Set current date and time .time
+        // Set current date and time .time .
         String currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         newLearningSystemModel.setCreatedAt(currentDateTime);
 
