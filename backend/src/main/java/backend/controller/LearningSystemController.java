@@ -18,7 +18,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("http://localhost:3000")   //frontend url 
 public class LearningSystemController {
     @Autowired
     private LearningSystemRepository learningSystemRepository;
