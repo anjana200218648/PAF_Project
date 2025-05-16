@@ -83,7 +83,7 @@ public class LearningSystemController {
         learningSystemRepository.deleteById(id);
     }
 
-    @PutMapping("/learningSystem/{id}/like")
+    @PutMapping("/learningSystem/{id}/like") //fixed like 
     public LearningSystemModel likePost(@PathVariable String id, @RequestParam String userID) {
         return learningSystemRepository.findById(id)
                 .map(post -> {
