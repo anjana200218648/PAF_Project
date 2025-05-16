@@ -1,21 +1,5 @@
 package backend.controller;
 
-import backend.exception.PostManagementNotFoundException;
-import backend.model.Comment;
-import backend.model.NotificationModel;
-import backend.model.PostManagementModel;
-import backend.repository.NotificationRepository;
-import backend.repository.PostManagementRepository;
-import backend.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MaxUploadSizeExceededException;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -27,6 +11,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.multipart.MultipartFile;
+
+import backend.exception.PostManagementNotFoundException;
+import backend.model.Comment;
+import backend.model.NotificationModel;
+import backend.model.PostManagementModel;
+import backend.repository.NotificationRepository;
+import backend.repository.PostManagementRepository;
+import backend.repository.UserRepository;
 
 @RestController
 @RequestMapping("/posts")
@@ -43,6 +53,7 @@ public class PostManagementController {
     @Value("${media.upload.dir}")
     private String uploadDir;
 
+    //Endpoint to create a new post
     @PostMapping
     public ResponseEntity<?> createPost(
             @RequestParam String userID,
@@ -92,11 +103,13 @@ public class PostManagementController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedPost);
     }
 
+    // Endpoint to get all posts
     @GetMapping
     public List<PostManagementModel> getAllPosts() {
         return postRepository.findAll();
     }
 
+    // Endpoint to get posts by user ID
     @GetMapping("/user/{userID}")
     public List<PostManagementModel> getPostsByUser(@PathVariable String userID) {
         return postRepository.findAll().stream()
@@ -104,6 +117,7 @@ public class PostManagementController {
                 .collect(Collectors.toList());
     }
 
+    // Endpoint to get posts by post ID
     @GetMapping("/{postId}")
     public ResponseEntity<?> getPostById(@PathVariable String postId) {
         PostManagementModel post = postRepository.findById(postId)
@@ -111,6 +125,7 @@ public class PostManagementController {
         return ResponseEntity.ok(post);
     }
 
+    // Endpoint to delete a post
     @DeleteMapping("/{postId}")
     public ResponseEntity<?> deletePost(@PathVariable String postId) {
         PostManagementModel post = postRepository.findById(postId)
@@ -128,11 +143,11 @@ public class PostManagementController {
             }
         }
 
-        // Delete the post from the database
         postRepository.deleteById(postId);
         return ResponseEntity.ok("Post deleted successfully!");
     }
 
+    // Endpoint to update a post
     @PutMapping("/{postId}")
     public ResponseEntity<?> updatePost(
             @PathVariable String postId,
