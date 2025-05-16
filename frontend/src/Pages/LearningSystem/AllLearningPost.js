@@ -109,7 +109,7 @@ function AllLearningPost() {
       if (url.includes('youtu.be/')) {
         const videoId = url.split('youtu.be/')[1];
         return `https://www.youtube.com/embed/${videoId}`;
-      }
+      } //youtube link convert to embed URL 
       return url;
     } catch (error) {
       console.error('Invalid URL:', url);
