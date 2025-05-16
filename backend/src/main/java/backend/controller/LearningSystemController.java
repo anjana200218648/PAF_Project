@@ -145,7 +145,7 @@ public class LearningSystemController {
 
     @DeleteMapping("/learningSystem/{id}/comment/{commentId}")
     public LearningSystemModel deleteComment(@PathVariable String id, @PathVariable String commentId, @RequestParam String userID) {
-        return learningSystemRepository.findById(id)
+        return learningSystemRepository.findById(id) //delete comment 
                 .map(post -> {
                     post.getComments().removeIf(comment -> comment.getId().equals(commentId) &&
                             (comment.getUserID().equals(userID) || post.getPostOwnerID().equals(userID)));
