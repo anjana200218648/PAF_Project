@@ -141,7 +141,7 @@ function AddLeariningPost() {
 
             <div className="learning-form-group">
               <label className="learning-label">
-                <Tag size={18} />
+                <Tag size={17} />
                 Tags
               </label>
               <div className={`learning-tags ${errors.tags ? 'error' : ''}`}>
