@@ -38,7 +38,7 @@ public class LearningSystemController {
         }
         // Fetch user's full name from UserRepository
         String postOwnerName = userRepository.findById(newLearningSystemModel.getPostOwnerID())
-                .map(user -> user.getFullname())
+                .map(user -> user.getFullname())//get user name from userRepository
                 .orElseThrow(() -> new UserNotFoundException("User not found for ID: " + newLearningSystemModel.getPostOwnerID()));
         newLearningSystemModel.setPostOwnerName(postOwnerName);
 
