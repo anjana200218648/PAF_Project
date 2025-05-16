@@ -62,7 +62,7 @@ public class LearningSystemController {
                 .orElseThrow(() -> new LearningSystemNotFoundException(id));
     }
 
-    @PutMapping("/learningSystem/{id}")
+    @PutMapping("/learningSystem/{id}")  // upade put method 
     LearningSystemModel update(@RequestBody LearningSystemModel newLearningSystemModel, @PathVariable String id) {
         return learningSystemRepository.findById(id)
                 .map(learningSystemModel -> {
