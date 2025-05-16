@@ -125,9 +125,9 @@ function AddLeariningPost() {
                 value={contentURL}
                 onChange={(e) => {
                   setContentURL(e.target.value);
-                  if (errors.contentURL) setErrors({...errors, contentURL: ''});
+                  if (errors.contentURL) setErrors({...errors, contentURL: ''}); 
                 }}
-                placeholder="https://example.com/article"  //url example 
+                placeholder="https://example.com/article "  //url example 
                 required
               />
               {errors.contentURL && (
