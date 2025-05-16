@@ -167,7 +167,7 @@ function AllLearningPost() {
     setShowingMyPosts(!showingMyPosts);
   };
 
-  const validateForm = () => {
+  const validateForm = () => { //form validation 
     const newErrors = {};
     
     if (!newPost.title.trim()) newErrors.title = 'Title is required';
