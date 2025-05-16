@@ -44,7 +44,7 @@ public class LearningSystemController {
 
         // Set current date and time
         String currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        newLearningSystemModel.setCreatedAt(currentDateTime);
+        newLearningSystemModel.setCreatedAt(currentDateTime); //set
 
         return learningSystemRepository.save(newLearningSystemModel); // Save postOwnerID along with other fields
     }
