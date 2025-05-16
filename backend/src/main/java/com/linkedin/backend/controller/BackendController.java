@@ -66,4 +66,4 @@ public class BackendController {
     public ResponseEntity<Map<String, String>> handleException(Exception e) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("message", e.getMessage()));
     }
-}
+}// test 2
