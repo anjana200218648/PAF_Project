@@ -32,7 +32,7 @@ function AddLeariningPost() {
     const postOwnerID = localStorage.getItem('userID');
     const postOwnerName = localStorage.getItem('userFullName');
     
-    // Validate form
+    // Validate form . 
     const newErrors = {};
     if (!title.trim()) newErrors.title = 'Title is required';
     if (!description.trim()) newErrors.description = 'Description is required';
