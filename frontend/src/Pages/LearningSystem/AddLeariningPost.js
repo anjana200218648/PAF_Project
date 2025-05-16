@@ -34,7 +34,7 @@ function AddLeariningPost() {
     
     // Validate form . 
     const newErrors = {};
-    if (!title.trim()) newErrors.title = 'Title is required';
+    if (!title.trim())  newErrors.title = 'Title is required'; 
     if (!description.trim()) newErrors.description = 'Description is required';
     if (!contentURL.trim()) newErrors.contentURL = 'Content URL is required';
     if (tags.length < 2) newErrors.tags = 'Please add at least two tags';
