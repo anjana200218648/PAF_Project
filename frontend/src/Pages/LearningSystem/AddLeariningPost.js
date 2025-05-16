@@ -127,7 +127,7 @@ function AddLeariningPost() {
                   setContentURL(e.target.value);
                   if (errors.contentURL) setErrors({...errors, contentURL: ''});
                 }}
-                placeholder="https://example.com/article"
+                placeholder="https://example.com/article"  //url example 
                 required
               />
               {errors.contentURL && (
