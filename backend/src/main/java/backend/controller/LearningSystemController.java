@@ -33,7 +33,7 @@ public class LearningSystemController {
     @PostMapping("/learningSystem")
     public LearningSystemModel newLearningSystemModel(@RequestBody LearningSystemModel newLearningSystemModel) {
         System.out.println("Received data: " + newLearningSystemModel); // Debugging line
-        if (newLearningSystemModel.getPostOwnerID() == null || newLearningSystemModel.getPostOwnerID().isEmpty()) {  //validation to chek null values /null
+        if (newLearningSystemModel.getPostOwnerID() == null || newLearningSystemModel.getPostOwnerID().isEmpty()) {  //validation to chek null values /null/
             throw new IllegalArgumentException("PostOwnerID is required."); // Ensure postOwnerID is provided
         }
         // Fetch user's full name from UserRepository
